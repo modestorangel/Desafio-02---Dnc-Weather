@@ -1,0 +1,95 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.pt-7 {
+  padding-top: 7rem;
+}
+
+.pb-7 {
+  padding-bottom: 7rem;
+}
+
+.color-black {
+  color: #000;
+}
+
+.color-white {
+  color: #fff;
+}
+
+#nav-primary {
+  background: #0c70f2;
+}
+
+.background-color-blue {
+  background: #0c70f2;
+}
+
+.background-color-white {
+  background: #f2f2f2;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+}
+
+.row h2 {
+  font-size: 3rem;
+}
+
+#blue-box {
+  background-color: #c4defd;
+  padding: 2.5rem;
+}
+#menu-footer {
+  text-align: end;
+}
+#form-dados {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px 30px 30px 30px;
+}
+.form-label {
+  font-weight: 500;
+  font-size: 16px;
+}
+.form-input {
+  background: #f2f2f2e5;
+  border-radius: 10px;
+  border: none;
+  padding: 25px 15px;
+}
+.form-button {
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+}
+.form-result {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+.border-tab {
+  border-radius: 20px;
+}
+.border-tab-top {
+  border-radius: 20px 20px 0px 0px;
+}
+.border-tab-botton {
+  background-color: white;
+  border-radius: 0px 0px 20px 20px;
+}
+.divider {
+  color: white;
+}

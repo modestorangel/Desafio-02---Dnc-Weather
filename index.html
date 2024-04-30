@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <header class="background-color-blue">
+        <nav class="navbar navbar-expand-lg pt-3 pb-3">
+            <div id="nav-primary" class="container">
+                <a class="navbar-brand" href="/index.html">
+                    <img src="/img/logo.svg" alt="Logo">
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-loct">Endereços</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#section-loct">Previsão do tempo</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--Section 01-->
+    <div class="background-color-white">
+        <div class="container d-flex justify-content-center pt-7 pb-7">
+            <div class="row">
+                <div class="col-md-9 align-self-center">
+                    <h2 class="color-black pb-3">Descubra Mais com Precisão: Previsões do Tempo e endereços em tempo
+                        real.</h2>
+                </div>
+                <div class="col-md-3">
+                    <figure class="figure">
+                        <img src="/img/clima.svg" class="figure-img img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section 02-->
+    <div class="background-color-white">
+        <div class="container d-flex justify-content-center pb-7">
+            <div class="row">
+                <div id="form-dados">
+                    <div class="container">
+
+                        <form>
+                            <div class="form-group mt-3 mb-3">
+                                <label for="name" class="form-label">Primeiro Nome:</label>
+                                <input type="text" placeholder="Insira seu primeiro nome:"
+                                    class="form-control form-input" id="name" />
+                            </div>
+
+                            <div class="form-group mt-5 mb-3">
+                                <label for="email" class="form-label">E-mail:</label>
+                                <input type="email" placeholder="Insira seu e-mail" class="form-control form-input"
+                                    id="email" />
+                            </div>
+
+                            <div class="form-group mt-5 mb-3">
+                                <label for="cep" class="form-label">Digite o CEP:</label>
+                                <input type="text" placeholder="Insira o CEP" class="form-control form-input"
+                                    id="cep" />
+                            </div>
+
+                            <div class="form-row mt-5 mb-3">
+                                <div class="form-group col-12">
+                                    <label for="lat_long" class="form-label">Digite a latitude e longitude para saber
+                                        a
+                                        previsão:</label>
+                                    <div class="row mb-3">
+                                        <div class="col-sm">
+                                            <input type="text" name="latitude" required class="form-control form-input"
+                                                placeholder="Latitude" id="lat">
+                                        </div>
+                                        <div class="col-sm">
+                                            <input type="text" name="longitude" required class="form-control form-input"
+                                                placeholder="Longitude" id="long">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 mb-3 row">
+                                <button type="button" class="btn btn-primary w-100 form-button"
+                                    onclick="onclickSubmitHandler()">ACESSAR</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--Section 03-->
+    <div class="background-color-white" id="section-loct">
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-9 align-self-center">
+                    <h3 class="color-black"><b>Resultado da busca por CEP:</b></h3>
+                </div>
+                <div class="col-md-3">
+                    <figure class="figure">
+                        <img src="/img/pin.svg" class="figure-img img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="container p-3 border-tab-top bg-primary">
+            <div class="row align-items-center text-white form-result">
+                <div class="col-4">
+                    Logradouro/Nome
+                </div>
+                <div class="col-4">
+                    Bairro/Distrito
+                </div>
+                <div class="col-4">
+                    Localidade/UF
+                </div>
+            </div>
+        </div>
+        <div class="container p-3 bg-white border-tab-botton">
+            <div class="row align-items-start  ">
+                <div class="col form-result">
+                    <div id="rua">
+                        --
+                    </div>
+                </div>
+                <div class="col form-result">
+                    <div id="bairro">
+                        --
+                    </div>
+                </div>
+                <div class="col form-result">
+                    <div id="estado">
+                        --
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section 04-->
+    <div class="background-color-white justify-content-center pt-7 pb-7" id="section-temp">
+        <div class="container d-flex justify-content-center">
+            <div class="row">
+                <div class="col-md-9 align-self-center">
+                    <h3 class="color-black"><b>Previsão do tempo na região:</b></h3>
+                </div>
+                <div class="col-md-3">
+                    <figure class="figure">
+                        <img src="/img/nuvem.svg" class="figure-img img-fluid">
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="container p-3 border-tab bg-white border border-primary form-result">
+            <div class="row">
+                <div class="col">
+                    <div id="returntemp">
+                        Previsão de tempo de acordo com a região: -- C
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Section footer-->
+    <footer class="background-color-blue pb-3 pt-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-7">
+                </div>
+                <div id="menu-footer" class="col-sm-12 col-md-5">
+                    <a href="#" class="color-white mb-2">Termos de Uso</a>
+                    <span class="divider"> | </span>
+                    <a href="#" class="color-white mb-2">Política de Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
